@@ -24,7 +24,7 @@ public class TypeConverters {
         Converters.registerConverter(Member.class, String.class, (Converter<Member, String>) u -> u.getUser().getId());
         */
         Converters.registerConverter(ch.njol.skript.util.Color.class, java.awt.Color.class, (Converter<Color, java.awt.Color>) color -> {
-            org.bukkit.Color bukkitColor = color.getBukkitColor();
+            org.bukkit.Color bukkitColor = color.asBukkitColor();
             return new java.awt.Color(bukkitColor.getRed(), bukkitColor.getGreen(), bukkitColor.getBlue());
         });
         Converters.registerConverter(EmbedBuilder.class, MessageEmbed.class,
